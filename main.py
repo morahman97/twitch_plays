@@ -19,20 +19,20 @@ ds1_keymap = {
     'dleft': 0xCB + 1024, #arrowleft
     'ddown': 0xD0 + 1024, #arrowdown
     'dright': 0xCD + 1024, #arrowright
-    'camup': 0x17, #i
-    'camleft': 0x24, #j
-    'camdown': 0x25, #k
-    'camright': 0x26, #l
+    'camup': 0x17, # i
+    'camleft': 0x24, # j
+    'camdown': 0x25, # k
+    'camright': 0x26, # l
     'r3': 0x18, # o
-    'l1': 0x2A, #left shift
-    'l2': 0x0F, #tab
-    'r1': 0x23, #h
-    'r2': 0x16, #u
+    'l1': 0x2C, # z
+    'l2': 0x2D, # x
+    'r1': 0x23, # h
+    'r2': 0x16, # u
     'sq': 0x12, # e
-    'tri': 0x38, #left alt
-    'o': 0x39, # space
-    'x': 0x1C, # enter
-    'start': 0xCF + 1024, # end
+    'tri': 0x2E, # c
+    'o': 0x2F, # v
+    'x': 0x30, # b
+    'start': 0x31, # n
     'select': 0x22 # g
 }
 
@@ -80,19 +80,8 @@ if __name__ == '__main__':
     print("Listening...")
     while True:
         resp = sock.recv(2048).decode('utf-8')
-        # leftClick() # actually works
-        # time.sleep(1)
-
         if len(resp) > 0:
             print("NEW MESSAGE: " + resp)
             key = resp.split()[-1][1:]
             print(key)
             press(key)
-        #     if press.lower() == "up":
-        #         keyboard.PressKey(0x11)
-        #         time.sleep(0.1)
-        #         keyboard.ReleaseKey(0x11)
-        #     if press.lower() == "r1":
-        #         mouse.click(Button.left, 1)
-
-        #     logging.info(resp)
