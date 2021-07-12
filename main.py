@@ -19,18 +19,23 @@ ds1_keymap = {
     'dleft': 0xCB + 1024, #arrowleft
     'ddown': 0xD0 + 1024, #arrowdown
     'dright': 0xCD + 1024, #arrowright
-    'camup': 0x17, # i
-    'camleft': 0x24, # j
-    'camdown': 0x25, # k
-    'camright': 0x26, # l
+    'cup': 0x17, # i
+    'cleft': 0x24, # j
+    'cdown': 0x25, # k
+    'cright': 0x26, # l
     'r3': 0x18, # o
     'l1': 0x2C, # z
     'l2': 0x2D, # x
     'r1': 0x23, # h
     'r2': 0x16, # u
+    's': 0x12, # e
     'sq': 0x12, # e
+    'square': 0x12, # e
+    't': 0x2E, # c
     'tri': 0x2E, # c
+    'triangle': 0x2E, # c
     'o': 0x2F, # v
+    'circle': 0x2F, # v
     'x': 0x30, # b
     'start': 0x31, # n
     'select': 0x22 # g
