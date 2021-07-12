@@ -1,22 +1,20 @@
 # twitch_plays_souls
 
-## Important Notes:
-Disclaimer 1: PLEASE BE AWARE THAT OTHER PEOPLE WILL BE SIMULATING KEYBOARD PRESSES TO YOUR COMPUTER, 
+## Important Notes
+Disclaimer 1: **Please be aware that other people will be simulating keyboard presses to your computer. 
+While I will do my part to ensure that no harmful scenarios arise,
+PLEASE Smake sure to remove any revealing info from your desktop screen or other running programs if technical difficulties arise when live**
 
-WHILE I WILL DO MY PART TO ENSURE THAT NO HARMFUL SCENARIOS ARISE, 
+Disclaimer 2: **I have no idea if fromsoft tracks speed of key presses so please take necessary precautions to prevent any possible bans**
 
-PLEASE MAKE SURE TO REMOVE ANY REVEALING INFO FROM YOUR DESKTOP SCREEN OR OTHER RUNNING PROGRAMS IF TECHNICAL DIFFICULTIES ARISE WHEN LIVE
-
-Disclaimer 2: I HAVE NO IDEA IF FROMSOFT TRACKS SPEED OF KEY PRESSES SO PLEASE TAKE NECESSARY PRECAUTIONS TO PREVENT ANY POSSIBLE BANS
-
-## Prerequisites:
-- Have Windows Powershell
+## Prerequisites
+- Have Windows Powershell on your computer (type 'powershell' in your search bar and see if it shows up)
 - HIGHLY recommend Microsoft Visual Studio Code with the Python extension to simplify code changes and execution
 - Something to open up ZIP files with, like 7-Zip or WinRAR
 - Dark Souls: Prepare to Die Edition preferably, otherwise the cash grab known as "Remastered"
     - Make the character beforehand, chat will not have full access to the keyboard to write the character name, and they will probably get stuck in advanced settings
 
-## Requirements:
+## Requirements
 - Install Python specifically 3.9.6. I am using it at this time on a Windows 10 64-bit computer. Can be found at Python website [here](https://www.python.org/downloads/)
     - After downloading, right click the installer to run it in administrator mode 
     - Choose the destination path to be in your main drive's Program Files(x86) path, for example: `C:\Program Files (x86)`
@@ -36,7 +34,7 @@ Disclaimer 2: I HAVE NO IDEA IF FROMSOFT TRACKS SPEED OF KEY PRESSES SO PLEASE T
     - Generate an OAuth token with this website [here](https://twitchapps.com/tmi/)
     - KEEP THE TOKEN HANDY, YOU NEED TO EDIT A SCRIPT AND PASTE THE TOKEN
 
-## Installation:
+## Installation
 - Download this script by clicking the green Code button on top, and 'Download as ZIP'
 - Save the zip contents somewhere you can easily access it
 - Open up `main.py` preferably with Microsoft VS Code, otherwise Notepad
@@ -45,12 +43,12 @@ Disclaimer 2: I HAVE NO IDEA IF FROMSOFT TRACKS SPEED OF KEY PRESSES SO PLEASE T
 - Replace `channel` to your username but with a `#` in front and no space (i.e. `#mohomie`)
 - Save your changes
 
-## Preparing the game:
+## Preparing the game
 - Boot up Dank Souls
 - Go to the settings where you configure keybinds (we are NOT using a controller to keep this as simple as possible, but you can have it connected too)
 - Change the controls to the following... TODO
 
-## Execution:
+## Execution
 - If using Microsoft VS Code to make the replacements above:
     - press CTRL+` to open up a terminal at the bottom of your screen
     - In that terminal just type `python .\main.py`
@@ -58,9 +56,13 @@ Disclaimer 2: I HAVE NO IDEA IF FROMSOFT TRACKS SPEED OF KEY PRESSES SO PLEASE T
     - Click into the window where DS1 is to focus onto the game
     - Go for it!
 
-## TODO:
+## TODO
 [ ] Perform stress testing by simulating a rowdy twitch chat and seeing how program holds up
+
 [ ] Add some sort of failsafe command
+
 [ ] Validate that above readme works
+
 [ ] Modify controls to use letter keys only
+
 [ ] Provide control mapping in README
