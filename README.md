@@ -57,12 +57,16 @@ Disclaimer 2: **I have no idea if fromsoft tracks speed of key presses so please
     - Go for it!
 
 ## TODO
-[ ] Perform stress testing by simulating a rowdy twitch chat and seeing how program holds up
+[X] Perform stress testing by simulating a rowdy twitch chat and seeing how program holds up
+    - Can handle random commands with cooldown of 1/100th of a second, possibly more
+    - Does not execute all commands due to character being locked in animations
 
 [ ] Add some sort of failsafe command
 
-[ ] Validate that above readme works
+[X] Validate that above readme works
+    - Tested installation settings with downloading ZIP and installing pywin32 only, runs successfully
 
-[ ] Modify controls to use letter keys only
-
+[X] Modify controls to use letter keys only
+    - Already implemented
+    
 [ ] Provide control mapping in README

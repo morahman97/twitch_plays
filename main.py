@@ -90,3 +90,5 @@ if __name__ == '__main__':
             key = resp.split()[-1][1:]
             print(key)
             press(key)
+
+# NEW MESSAGE: :lokoheimer!lokoheimer@lokoheimer.tmi.twitch.tv PRIVMSG #mohomie :cleft
