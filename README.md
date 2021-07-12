@@ -3,7 +3,7 @@
 ## Important Notes
 Disclaimer 1: **Please be aware that other people will be simulating keyboard presses to your computer. 
 While I will do my part to ensure that no harmful scenarios arise,
-PLEASE Smake sure to remove any revealing info from your desktop screen or other running programs if technical difficulties arise when live**
+PLEASE make sure to remove any revealing info from your desktop screen or other running programs if technical difficulties arise when live**
 
 Disclaimer 2: **I have no idea if fromsoft tracks speed of key presses so please take necessary precautions to prevent any possible bans**
 
