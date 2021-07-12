@@ -41,18 +41,28 @@ ds1_keymap = {
     'select': 0x22 # g
 }
 
+dodgeSet = {'dodgeup', 'dodgeleft', 'dodgedown', 'dodgeright'}
+
 def press(key):
     key = key.lower()
     delay = 0.2
     # If input command is to move, set a higher duration for movement
     if key == 'up' or key == 'left' or key == 'down' or key == 'right':
         delay = 0.5
-    direct = ds1_keymap.setdefault(key,'')
-    print(direct)
-    if direct != '':
-        keyboard.PressKey(direct)
-        time.sleep(delay)
-        keyboard.ReleaseKey(direct)
+    elif key in dodgeSet:
+        if key == 'dodgeUp':
+            keyboard.PressKey(0x2F)
+            keyboard.PressKey(0x11)
+            time.sleep(delay)
+            keyboard.ReleaseKey(0x2F)
+            keyboard.ReleaseKey(0x11)
+    else:
+        direct = ds1_keymap.setdefault(key,'')
+        print(direct)
+        if direct != '':
+            keyboard.PressKey(direct)
+            time.sleep(delay)
+            keyboard.ReleaseKey(direct)
 
 # Function to detect clicks specifically. Not used currently but can be used for other games that require mouse input
 def leftClick():
@@ -73,7 +83,7 @@ if __name__ == '__main__':
     server = 'irc.chat.twitch.tv'
     port = 6667
     nickname = 'mohomie' # rename this to streamer name
-    token = 'oauth:5bcb60h4009zv85rqbh09p0vqmellz' # generate your own specific token using this link here... https://twitchapps.com/tmi/
+    token = 'oauth:5bcb60h4009zv85rqbh09p0vqmellz' # replace with your own token using link here... https://twitchapps.com/tmi/
     channel = '#mohomie' # rename this to streamer name with a '#' in front of it
 
     sock.connect((server, port))
@@ -88,6 +98,9 @@ if __name__ == '__main__':
         if len(resp) > 0:
             print("NEW MESSAGE: " + resp)
             key = resp.split()[-1][1:]
+            if key == 'STOP' and (resp.startswith('napstarf!') or resp.startswith('mohomie')):
+                print("-----------------ADMIN STOP---------------")
+                break
             print(key)
             press(key)
 
