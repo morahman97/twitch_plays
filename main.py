@@ -1,3 +1,5 @@
+import sys
+import re
 import socket
 import logging
 import time
@@ -19,10 +21,10 @@ ds1_keymap = {
     'dleft': 0xCB + 1024, #arrowleft
     'ddown': 0xD0 + 1024, #arrowdown
     'dright': 0xCD + 1024, #arrowright
-    'cup': 0x17, # i
-    'cleft': 0x24, # j
-    'cdown': 0x25, # k
-    'cright': 0x26, # l
+    'rup': 0x17, # i
+    'rleft': 0x24, # j
+    'rdown': 0x25, # k
+    'rright': 0x26, # l
     'r3': 0x18, # o
     'l1': 0x2C, # z
     'l2': 0x2D, # x
@@ -49,13 +51,32 @@ def press(key):
     # If input command is to move, set a higher duration for movement
     if key == 'up' or key == 'left' or key == 'down' or key == 'right':
         delay = 0.5
-    elif key in dodgeSet:
-        if key == 'dodgeUp':
+    if key in dodgeSet:
+        # simultaneously press 'o' and corresponding direction to dodge
+        if key.lower() == 'dodgeup':
             keyboard.PressKey(0x2F)
             keyboard.PressKey(0x11)
             time.sleep(delay)
             keyboard.ReleaseKey(0x2F)
             keyboard.ReleaseKey(0x11)
+        elif key.lower() == 'dodgeleft':
+            keyboard.PressKey(0x2F)
+            keyboard.PressKey(0x1E)
+            time.sleep(delay)
+            keyboard.ReleaseKey(0x2F)
+            keyboard.ReleaseKey(0x1E)
+        if key.lower() == 'dodgedown':
+            keyboard.PressKey(0x2F)
+            keyboard.PressKey(0x1F)
+            time.sleep(delay)
+            keyboard.ReleaseKey(0x2F)
+            keyboard.ReleaseKey(0x1F)
+        if key.lower() == 'dodgeright':
+            keyboard.PressKey(0x2F)
+            keyboard.PressKey(0x20)
+            time.sleep(delay)
+            keyboard.ReleaseKey(0x2F)
+            keyboard.ReleaseKey(0x20)
     else:
         direct = ds1_keymap.setdefault(key,'')
         print(direct)
@@ -79,7 +100,8 @@ if __name__ == '__main__':
                         format='%(asctime)s — %(message)s',
                         datefmt='%Y-%m-%d_%H:%M:%S',
                         handlers=[logging.FileHandler('chat.log', encoding='utf-8')])
-
+    
+    print("Initializing Parameters...")
     server = 'irc.chat.twitch.tv'
     port = 6667
     nickname = 'mohomie' # rename this to streamer name
@@ -96,12 +118,20 @@ if __name__ == '__main__':
     while True:
         resp = sock.recv(2048).decode('utf-8')
         if len(resp) > 0:
+            # Reply to a PING with a PONG to ensure we don't time out
             print("NEW MESSAGE: " + resp)
-            key = resp.split()[-1][1:]
-            if key == 'STOP' and (resp.startswith('napstarf!') or resp.startswith('mohomie')):
-                print("-----------------ADMIN STOP---------------")
-                break
-            print(key)
-            press(key)
+            if resp.startswith('PING'):
+                sock.send("PONG\n".encode('utf-8'))
+            else:
+                # username, channel, message = re.search(':(.*)\!.*@.*\.tmi\.twitch\.tv PRIVMSG #(.*) :(.*)', resp).groups()
+                # print("USERNAME: " + username)
+                # print("CHANNEL: " + channel)
+                # print("MESSAGE: " + message)
+                key = resp.split()[-1][1:]
+                if key == 'STOP' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                    print("-----------------ADMIN STOP---------------")
+                    sys.exit()
+                print(key)
+                press(key)
 
 # NEW MESSAGE: :lokoheimer!lokoheimer@lokoheimer.tmi.twitch.tv PRIVMSG #mohomie :cleft

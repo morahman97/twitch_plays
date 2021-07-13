@@ -61,7 +61,8 @@ Disclaimer 2: **I have no idea if fromsoft tracks speed of key presses so please
     - Can handle random commands with cooldown of 1/100th of a second, possibly more
     - Does not execute all commands due to character being locked in animations
 
-[ ] Add some sort of failsafe command
+[X] Add some sort of failsafe command
+    - **From another device**, type STOP **in all caps** into chat to terminate the program
 
 [X] Validate that above readme works
     - Tested installation settings with downloading ZIP and installing pywin32 only, runs successfully
