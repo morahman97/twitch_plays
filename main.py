@@ -45,6 +45,14 @@ ds1_keymap = {
 
 dodgeSet = {'dodgeup', 'dodgeleft', 'dodgedown', 'dodgeright'}
 
+def dodge(key):
+    delay = 0.2
+    keyboard.PressKey(ds1_keymap[key])
+    keyboard.PressKey(ds1_keymap['circle'])
+    time.sleep(delay)
+    keyboard.ReleaseKey(ds1_keymap[key])
+    keyboard.ReleaseKey(ds1_keymap['circle'])
+
 def press(key):
     key = key.lower()
     delay = 0.2
@@ -52,31 +60,17 @@ def press(key):
     if key == 'up' or key == 'left' or key == 'down' or key == 'right':
         delay = 0.5
     if key in dodgeSet:
+        dir = key[5:] # strip the word 'dodge' from the command
+        dodge(dir)
         # simultaneously press 'o' and corresponding direction to dodge
-        if key.lower() == 'dodgeup':
-            keyboard.PressKey(0x2F)
-            keyboard.PressKey(0x11)
-            time.sleep(delay)
-            keyboard.ReleaseKey(0x2F)
-            keyboard.ReleaseKey(0x11)
-        elif key.lower() == 'dodgeleft':
-            keyboard.PressKey(0x2F)
-            keyboard.PressKey(0x1E)
-            time.sleep(delay)
-            keyboard.ReleaseKey(0x2F)
-            keyboard.ReleaseKey(0x1E)
-        if key.lower() == 'dodgedown':
-            keyboard.PressKey(0x2F)
-            keyboard.PressKey(0x1F)
-            time.sleep(delay)
-            keyboard.ReleaseKey(0x2F)
-            keyboard.ReleaseKey(0x1F)
-        if key.lower() == 'dodgeright':
-            keyboard.PressKey(0x2F)
-            keyboard.PressKey(0x20)
-            time.sleep(delay)
-            keyboard.ReleaseKey(0x2F)
-            keyboard.ReleaseKey(0x20)
+        # if key.lower() == 'dodgeup':
+        #     dodge('up')
+        # elif key.lower() == 'dodgeleft':
+        #     dodge('left')
+        # if key.lower() == 'dodgedown':
+        #     dodge('down')
+        # if key.lower() == 'dodgeright':
+        #     dodge('right')
     else:
         direct = ds1_keymap.setdefault(key,'')
         print(direct)

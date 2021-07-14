@@ -58,7 +58,7 @@ Disclaimer 2: **I have no idea if fromsoft tracks speed of key presses so please
 
 ## TODO
 [X] Perform stress testing by simulating a rowdy twitch chat and seeing how program holds up
-    - Can handle random commands with cooldown of 1/100th of a second, possibly more
+    - Can handle random commands generated every 1/100th of a second
     - Does not execute all commands due to character being locked in animations
 
 [X] Add some sort of failsafe command

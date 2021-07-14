@@ -1,0 +1,44 @@
+PLEASE DO NOT SPAM THE SAME BUTTON REPEATEDLY, I DO NOT WANT YOU TO GET SHADOWBANNED
+- Note: controls for playstation, sorry skaguy, yuiffie, and whoever else on xbox lmao
+
+## PLAYER MOVEMENT ##
+'up' - left stick up
+'down' - left stick down
+'left' - left stick left
+'right' - left stick right
+
+## CAMERA MOVEMENT ##
+'rup' - right stick up
+'rdown' - right stick down
+'rleft' - right stick left
+'rright' - right stick right
+
+## DPAD MOVEMENT ##
+'dup' - move dpad up
+'ddown' - move dpad down
+'dleft' - move dpad left
+'dright' - move dpad right
+
+## FACE BUTTONS ##
+'square' / 'sq' / 's' - presses square
+'triangle' / 'tri' / 't' - presses triangle
+'circle' / 'o' - presses circle
+'x' - presses x
+
+## SHOULDER BUTTONS ##
+'r1' - presses r1
+'r2' - presses r2
+'l1' - presses l1
+'l2' - presses l2
+
+## OTHER BUTTONS ##
+'l3' - pushes left stick
+'r3' - pushes right stick
+'start' - pushes start
+'select' - pushes select
+
+## SPECIAL ##
+'dodgeup' - dodge moving left stick up
+'dodgedown' - dodge moving left stick down
+'dodgeleft' - dodge moving left stick left
+'dodgeright' - dodge moving left stick right
