@@ -56,7 +56,15 @@ Disclaimer 2: **I have no idea if fromsoft tracks speed of key presses so please
     - Click into the window where DS1 is to focus onto the game
     - Go for it!
 
+## Twitch Limitations on Chat
+Note: These are from my observations, probably will need a live test to determine any more issues
+- A person is unable to type the same exact message twice in a row.
+    - Possible fix may be adding alternatives to each command
+- A person spamming too many different messages in a short span of time may cause them to be shadowbanned or timeout based on Twitch's global rules. 
+    - Possible fix might be to enable slow mode of 3 seconds.
+
 ## TODO
+[ ] Add DS Remastered control support
 [X] Perform stress testing by simulating a rowdy twitch chat and seeing how program holds up
     - Can handle random commands generated every 1/100th of a second
     - Does not execute all commands due to character being locked in animations
@@ -69,5 +77,9 @@ Disclaimer 2: **I have no idea if fromsoft tracks speed of key presses so please
 
 [X] Modify controls to use letter keys only
     - Already implemented
-    
-[ ] Provide control mapping in README
+
+[ ] Perform long term test
+
+[ ] Detect when DS closes to trigger auto shutdown
+
+[X] Add additional commands to START and STOP the stream

@@ -20,10 +20,10 @@ PLEASE DO NOT SPAM THE SAME BUTTON REPEATEDLY, I DO NOT WANT YOU TO GET SHADOWBA
 'dright' - move dpad right
 
 ## FACE BUTTONS ##
-'square' / 'sq' / 's' - presses square
-'triangle' / 'tri' / 't' - presses triangle
+'square' / 'sq' - presses square
+'triangle' / 'tri' - presses triangle
 'circle' / 'o' - presses circle
-'x' - presses x
+'x' - presses x (the playstation controller 'x' button)
 
 ## SHOULDER BUTTONS ##
 'r1' - presses r1

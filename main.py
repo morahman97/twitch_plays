@@ -30,10 +30,8 @@ ds1_keymap = {
     'l2': 0x2D, # x
     'r1': 0x23, # h
     'r2': 0x16, # u
-    's': 0x12, # e
     'sq': 0x12, # e
     'square': 0x12, # e
-    't': 0x2E, # c
     'tri': 0x2E, # c
     'triangle': 0x2E, # c
     'o': 0x2F, # v
@@ -42,6 +40,45 @@ ds1_keymap = {
     'start': 0x31, # n
     'select': 0x22 # g
 }
+
+dsr_keymap = {
+    'up': 0x11, # w
+    'left': 0x1E, # a
+    'down': 0x1F, # s
+    'right': 0x20, # d
+    # switch right weapon =
+    # switch left -
+    # switch item [
+    # switch magic ]
+    # select up m
+    # select down y
+    # select left f
+    # select right p
+    'dup': 0xC8 + 1024, #m
+    'dleft': 0xCB + 1024, #arrowleft
+    'ddown': 0xD0 + 1024, #arrowdown
+    'dright': 0xCD + 1024, #arrowright
+    'rup': 0x17, # i
+    'rleft': 0x24, # j
+    'rdown': 0x25, # k
+    'rright': 0x26, # l
+    'r3': 0x18, # o
+    'l1': 0x2C, # z
+    'l2': 0x2D, # x
+    'r1': 0x23, # h
+    'r2': 0x16, # u
+    'sq': 0x12, # e
+    'square': 0x12, # e
+    'tri': 0x2E, # c
+    'triangle': 0x2E, # c
+    'o': 0x2F, # v
+    'circle': 0x2F, # v
+    'x': 0x30, # b
+    'start': 0x31, # n
+    'select': 0x22 # g
+}
+
+ACTIVE = False
 
 dodgeSet = {'dodgeup', 'dodgeleft', 'dodgedown', 'dodgeright'}
 
@@ -62,15 +99,6 @@ def press(key):
     if key in dodgeSet:
         dir = key[5:] # strip the word 'dodge' from the command
         dodge(dir)
-        # simultaneously press 'o' and corresponding direction to dodge
-        # if key.lower() == 'dodgeup':
-        #     dodge('up')
-        # elif key.lower() == 'dodgeleft':
-        #     dodge('left')
-        # if key.lower() == 'dodgedown':
-        #     dodge('down')
-        # if key.lower() == 'dodgeright':
-        #     dodge('right')
     else:
         direct = ds1_keymap.setdefault(key,'')
         print(direct)
@@ -117,15 +145,17 @@ if __name__ == '__main__':
             if resp.startswith('PING'):
                 sock.send("PONG\n".encode('utf-8'))
             else:
-                # username, channel, message = re.search(':(.*)\!.*@.*\.tmi\.twitch\.tv PRIVMSG #(.*) :(.*)', resp).groups()
-                # print("USERNAME: " + username)
-                # print("CHANNEL: " + channel)
-                # print("MESSAGE: " + message)
                 key = resp.split()[-1][1:]
                 if key == 'STOP' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
                     print("-----------------ADMIN STOP---------------")
                     sys.exit()
+                if key == 'PAUSE' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                    print("-----------------ADMIN PAUSE---------------")
+                    ACTIVE = False
+                if key == 'START' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                    ACTIVE = True
                 print(key)
-                press(key)
+                if ACTIVE: press(key)
+                elif ACTIVE == False: print("CHAT COMMANDS CURRENTLY PAUSED")
 
 # NEW MESSAGE: :lokoheimer!lokoheimer@lokoheimer.tmi.twitch.tv PRIVMSG #mohomie :cleft
