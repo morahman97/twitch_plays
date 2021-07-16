@@ -3,13 +3,9 @@ import re
 import socket
 import logging
 import time
-# from collections import defaultdict
-# import pyautogui
-# import pydirectinput
 import keyboard
 import win32api
 import win32con
-# from pynput.mouse import Button, Controller
 
 # Full list of character mappings can be found at https://raw.githubusercontent.com/SerpentAI/SerpentAI/dev/serpent/input_controllers/native_win32_input_controller.py
 ds1_keymap = {
@@ -46,18 +42,14 @@ dsr_keymap = {
     'left': 0x1E, # a
     'down': 0x1F, # s
     'right': 0x20, # d
-    # switch right weapon =
-    # switch left -
-    # switch item [
-    # switch magic ]
-    # select up m
-    # select down y
-    # select left f
-    # select right p
-    'dup': 0xC8 + 1024, #m
-    'dleft': 0xCB + 1024, #arrowleft
-    'ddown': 0xD0 + 1024, #arrowdown
-    'dright': 0xCD + 1024, #arrowright
+    'dup': 0x1B, # ]      # switch magic ]
+    'dleft': 0x0C, # -    # switch left -
+    'ddown': 0X1A, # [    # switch item [
+    'dright': 0x0D, # =   # switch right weapon =
+    'dup': 0x32, # m      # select up m
+    'dleft': 0x21, # f    # select left f
+    'ddown': 0x15, # y    # select down y
+    'dright': 0x19, # p    # select right p
     'rup': 0x17, # i
     'rleft': 0x24, # j
     'rdown': 0x25, # k
@@ -97,7 +89,7 @@ def press(key):
     if key == 'up' or key == 'left' or key == 'down' or key == 'right':
         delay = 0.5
     if key in dodgeSet:
-        dir = key[5:] # strip the word 'dodge' from the command
+        dir = key[5:] # extract dodge direction
         dodge(dir)
     else:
         direct = ds1_keymap.setdefault(key,'')
