@@ -38,22 +38,30 @@ import win32con
 # }
 
 ds1_keymap = {
-    'up': 0x11, # w
+    'forward': 0x11, # w
     'left': 0x1E, # a
-    'down': 0x1F, # s
+    'back': 0x1F, # s
     'right': 0x20, # d
     'dup': 0x1B, # ]      # switch magic ]
     'dleft': 0x0C, # -    # switch left -
     'ddown': 0X1A, # [    # switch item [
     'dright': 0x0D, # =   # switch right weapon =
-    'dup': 0x32, # m      # select up m
-    'dleft': 0x21, # f    # select left f
-    'ddown': 0x15, # y    # select down y
-    'dright': 0x19, # p    # select right p
-    'rup': 0x17, # i
-    'rleft': 0x24, # j
-    'rdown': 0x25, # k
-    'rright': 0x26, # l
+    'menuup': 0x32, # m      # select up m
+    'mup': 0x32, # m      # select up m
+    'menuleft': 0x21, # f    # select left f
+    'mleft': 0x21, # f    # select left f
+    'menudown': 0x15, # y    # select down y
+    'mdown': 0x15, # y    # select down y
+    'menuright': 0x19, # p    # select right p
+    'mright': 0x19, # p    # select right p
+    'camup': 0x17, # i
+    'cup': 0x17, # i
+    'camleft': 0x24, # j
+    'cleft': 0x24, # j
+    'camdown': 0x25, # k
+    'cdown': 0x25, # k
+    'camright': 0x26, # l
+    'cright': 0x26, # l
     'r3': 0x18, # o
     'l1': 0x2C, # z
     'l2': 0x2D, # x
@@ -66,13 +74,14 @@ ds1_keymap = {
     'o': 0x2F, # v
     'circle': 0x2F, # v
     'x': 0x30, # b
+    'enter': 0x30, # b
     'start': 0x31, # n
     'select': 0x22 # g
 }
 
 ACTIVE = False
 
-dodgeSet = {'dodgeup', 'dodgeleft', 'dodgedown', 'dodgeright'}
+dodgeSet = {'roll', 'rollleft', 'rollback', 'rollright'}
 
 def dodge(key):
     delay = 0.2
@@ -86,7 +95,7 @@ def press(key):
     key = key.lower()
     delay = 0.2
     # If input command is to move, set a higher duration for movement
-    if key == 'up' or key == 'left' or key == 'down' or key == 'right':
+    if key == 'forward' or key == 'left' or key == 'back' or key == 'right' or key == l1:
         delay = 0.5
     if key in dodgeSet:
         dir = key[5:] # extract dodge direction
