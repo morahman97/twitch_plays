@@ -7,24 +7,24 @@ HOW TO PLAY TWITCH PLAYS SOULS (made by mohomie):
 ----------------------------------------------------------------
                 ## PLAYER MOVEMENT ##
 ----------------------------------------------------------------
-'forward'                 | move character forward
+'forward'            | move character forward
 'back'               | move character back
 'left'               | move character left
 'right'              | move character right
 
                 ## SHOULDER BUTTONS ##
 ----------------------------------------------------------------
-'r1'                 | light attack with right hand
-'r2'                 | heavy attack with right hand
-'l1'                 | short block with left hand
-'l2'                 | parry with left hand
+'R1' / 'r1'           | light attack with right hand
+'R2' / 'r2'           | heavy attack with right hand
+'L1' / 'l1'           | short block with left hand
+'L2' / 'l2'           | parry with left hand
 
                     ## DODGING ##
 ----------------------------------------------------------------
-'dodgeup'            | dodge moving left stick up
-'dodgedown'          | dodge moving left stick down
-'dodgeleft'          | dodge moving left stick left
-'dodgeright'         | dodge moving left stick right
+'dodge' / 'roll'               | roll forward
+'dodgeback' / 'rollback'           | roll back
+'dodgeleft' / 'rollleft'           | roll moving left
+'dodgeright' / 'rollright        | dodge moving left stick right
 
         ## FACE BUTTONS ## ('/' = alternative input)
 ----------------------------------------------------------------
@@ -41,12 +41,19 @@ HOW TO PLAY TWITCH PLAYS SOULS (made by mohomie):
 'dleft'              | change left hand or move left in menu
 'dright'             | change right hand or move right in menu
 
+                ## DPAD MOVEMENT ##
+----------------------------------------------------------------
+'menuup' / 'mup'               | change magic or move up in menu
+'menudown' / 'mdown'             | change item or move down in menu
+'menuleft' / 'mleft'             | change left hand or move left in menu
+'menuright' / 'mright'            | change right hand or move right in menu
+
                 ## CAMERA MOVEMENT ##
 ----------------------------------------------------------------
-'camup'                | move camera up
-'camdown'              | move camera down
-'camleft'              | move camera left
-'camright'             | move camera right
+'camup' / 'cup'               | move camera up
+'camdown' / 'cdown'              | move camera down
+'camleft' / 'cleft'             | move camera left
+'camright' / 'cright'            | move camera right
 
                 ## OTHER BUTTONS ##
 ----------------------------------------------------------------

@@ -81,24 +81,34 @@ ds1_keymap = {
 
 ACTIVE = False
 
-dodgeSet = {'roll', 'rollleft', 'rollback', 'rollright'}
+dodgeSet = {'roll', 'rollleft', 'rollback', 'rollright', 'dodge', 'dodgeleft', 'dodgeright', 'dodgeback'}
 
 def dodge(key):
     delay = 0.2
-    keyboard.PressKey(ds1_keymap[key])
-    keyboard.PressKey(ds1_keymap['circle'])
-    time.sleep(delay)
-    keyboard.ReleaseKey(ds1_keymap[key])
-    keyboard.ReleaseKey(ds1_keymap['circle'])
+    if key == 'roll' or key == 'dodge':
+        keyboard.PressKey(ds1_keymap['forward'])
+        keyboard.PressKey(ds1_keymap['circle'])
+        time.sleep(delay)
+        keyboard.ReleaseKey(ds1_keymap['forward'])
+        keyboard.ReleaseKey(ds1_keymap['circle'])
+    else:
+        keyboard.PressKey(ds1_keymap[key])
+        keyboard.PressKey(ds1_keymap['circle'])
+        time.sleep(delay)
+        keyboard.ReleaseKey(ds1_keymap[key])
+        keyboard.ReleaseKey(ds1_keymap['circle'])
 
 def press(key):
     key = key.lower()
     delay = 0.2
-    # If input command is to move, set a higher duration for movement
+    # If input command is to move or block, set a higher duration for action
     if key == 'forward' or key == 'left' or key == 'back' or key == 'right' or key == 'l1':
         delay = 0.75
     if key in dodgeSet:
-        dir = key[5:] # extract dodge direction
+        if key[:4] == 'roll':
+            dir = key[4:] # extract roll direction
+        elif key[:5] == 'dodge':
+            dir = key[5:] # extract dodge direction
         dodge(dir)
     else:
         direct = ds1_keymap.setdefault(key,'')
