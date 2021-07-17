@@ -95,7 +95,7 @@ def press(key):
     key = key.lower()
     delay = 0.2
     # If input command is to move, set a higher duration for movement
-    if key == 'forward' or key == 'left' or key == 'back' or key == 'right' or key == l1:
+    if key == 'forward' or key == 'left' or key == 'back' or key == 'right' or key == 'l1':
         delay = 0.5
     if key in dodgeSet:
         dir = key[5:] # extract dodge direction
