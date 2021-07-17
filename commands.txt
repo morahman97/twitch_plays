@@ -3,57 +3,59 @@ HOW TO PLAY TWITCH PLAYS SOULS (made by mohomie):
 - DO NOT SPAM THE SAME COMMAND REPEATEDLY, I DO NOT WANT YOU TO GET SHADOWBANNED
 - Note: controls for playstation, sorry skaguy, yuiffie, and whoever else on xbox lmao
 
-'COMMAND'            | BUTTON PRESSED        | IN-GAME ACTION
---------------------------------------------------------------------------------------
-                                 ## PLAYER MOVEMENT ##
---------------------------------------------------------------------------------------
-'up'                 | left stick up         | move character up
-'down'               | left stick down       | move character down
-'left'               | left stick left       | move character left
-'right'              | left stick right      | move character right
+'COMMAND'            | IN-GAME ACTION
+----------------------------------------------------------------
+                ## PLAYER MOVEMENT ##
+----------------------------------------------------------------
+'up'                 | move character up
+'down'               | move character down
+'left'               | move character left
+'right'              | move character right
 
-                                ## CAMERA MOVEMENT ##
---------------------------------------------------------------------------------------
-'rup'                | right stick up        | move camera up
-'rdown'              | right stick down      | move camera down
-'rleft'              | right stick left      | move camera left
-'rright'             | right stick right     | move camera right
+                ## SHOULDER BUTTONS ##
+----------------------------------------------------------------
+'r1'                 | light attack with right hand
+'r2'                 | heavy attack with right hand
+'l1'                 | short block with left hand
+'l2'                 | parry with left hand
 
-                                ## DPAD MOVEMENT ##
---------------------------------------------------------------------------------------
-'dup'                | move dpad up          | change magic or move up in menu
-'ddown'              | move dpad down        | change item or move down in menu
-'dleft'              | move dpad left        | change left hand or move left in menu
-'dright'             | move dpad right       | change right hand or move right in menu
+                    ## DODGING ##
+----------------------------------------------------------------
+'dodgeup'            | dodge moving left stick up
+'dodgedown'          | dodge moving left stick down
+'dodgeleft'          | dodge moving left stick left
+'dodgeright'         | dodge moving left stick right
 
-                                ## FACE BUTTONS ## ('/' = alternative input)
---------------------------------------------------------------------------------------
-'square' / 'sq'      | press square          | use item
-'triangle' / 'tri'   | press triangle        | toggle two-hand or one-hand for weapon
-'circle' / 'o'       | press circle          | backstep or back out of menu
-'x'                  | press x               | interact or confirm menu choice
+        ## FACE BUTTONS ## ('/' = alternative input)
+----------------------------------------------------------------
+'square' / 'sq'      | use item
+'triangle' / 'tri'   | toggle two-hand or one-hand for weapon
+'circle' / 'o'       | backstep or back out of menu
+'x'                  | interact or confirm menu choice
 (note: x = playstation 'x' button)
 
-                                ## SHOULDER BUTTONS ##
---------------------------------------------------------------------------------------
-'r1'                 | press r1              | light attack with right hand
-'r2'                 | press r2              | heavy attack with right hand
-'l1'                 | press l1              | short block with left hand
-'l2'                 | press l2              | parry with left hand
+                ## DPAD MOVEMENT ##
+----------------------------------------------------------------
+'dup'                | change magic or move up in menu
+'ddown'              | change item or move down in menu
+'dleft'              | change left hand or move left in menu
+'dright'             | change right hand or move right in menu
 
-                                ## OTHER BUTTONS ##
---------------------------------------------------------------------------------------
-'l3'                 | pushes left stick     | we ain't coordinated enough to jump lmao
-'r3'                 | pushes right stick    | lock onto enemy or reset camera
-'start'              | pushes start          | open pause menu
-'select'             | pushes select         | open gesture menu
+                ## CAMERA MOVEMENT ##
+----------------------------------------------------------------
+'rup'                | move camera up
+'rdown'              | move camera down
+'rleft'              | move camera left
+'rright'             | move camera right
 
-                                ## SPECIAL ## (commands only for this run!)
---------------------------------------------------------------------------------------
-'dodgeup'            | push circle and up    | dodge moving left stick up
-'dodgedown'          | push circle and down  | dodge moving left stick down
-'dodgeleft'          | push circle and left  | dodge moving left stick left
-'dodgeright'         | push circle and right | dodge moving left stick right
+                ## OTHER BUTTONS ##
+----------------------------------------------------------------
+'l3'                 | we ain't coordinated enough to jump lmao
+'r3'                 | lock onto enemy or reset camera
+'start'              | open pause menu
+'select'             | open gesture menu
+
+
 
 
 for business inquiries contact me at 69ligma420ligma@gmail.com
