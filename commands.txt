@@ -1,11 +1,10 @@
-Mod and command list made by mohomie
-
-- PLEASE DO NOT SPAM THE SAME COMMAND REPEATEDLY, I DO NOT WANT YOU TO GET SHADOWBANNED
+HOW TO PLAY TWITCH PLAYS SOULS (made by mohomie):
+- Type ONE command from the left column in the list below without '' to press in-game
+- DO NOT SPAM THE SAME COMMAND REPEATEDLY, I DO NOT WANT YOU TO GET SHADOWBANNED
 - Note: controls for playstation, sorry skaguy, yuiffie, and whoever else on xbox lmao
 
 'COMMAND'            | BUTTON PRESSED        | IN-GAME ACTION
 --------------------------------------------------------------------------------------
-
                                  ## PLAYER MOVEMENT ##
 --------------------------------------------------------------------------------------
 'up'                 | left stick up         | move character up
@@ -55,3 +54,6 @@ Mod and command list made by mohomie
 'dodgedown'          | push circle and down  | dodge moving left stick down
 'dodgeleft'          | push circle and left  | dodge moving left stick left
 'dodgeright'         | push circle and right | dodge moving left stick right
+
+
+for business inquiries contact me at 69ligma420ligma@gmail.com

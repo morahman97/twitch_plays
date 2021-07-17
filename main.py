@@ -8,36 +8,36 @@ import win32api
 import win32con
 
 # Full list of character mappings can be found at https://raw.githubusercontent.com/SerpentAI/SerpentAI/dev/serpent/input_controllers/native_win32_input_controller.py
-ds1_keymap = {
-    'up': 0x11, # w
-    'left': 0x1E, # a
-    'down': 0x1F, # s
-    'right': 0x20, # d
-    'dup': 0xC8 + 1024, #arrowup
-    'dleft': 0xCB + 1024, #arrowleft
-    'ddown': 0xD0 + 1024, #arrowdown
-    'dright': 0xCD + 1024, #arrowright
-    'rup': 0x17, # i
-    'rleft': 0x24, # j
-    'rdown': 0x25, # k
-    'rright': 0x26, # l
-    'r3': 0x18, # o
-    'l1': 0x2C, # z
-    'l2': 0x2D, # x
-    'r1': 0x23, # h
-    'r2': 0x16, # u
-    'sq': 0x12, # e
-    'square': 0x12, # e
-    'tri': 0x2E, # c
-    'triangle': 0x2E, # c
-    'o': 0x2F, # v
-    'circle': 0x2F, # v
-    'x': 0x30, # b
-    'start': 0x31, # n
-    'select': 0x22 # g
-}
+# ds1_keymap = {
+#     'up': 0x11, # w
+#     'left': 0x1E, # a
+#     'down': 0x1F, # s
+#     'right': 0x20, # d
+#     'dup': 0xC8 + 1024, #arrowup
+#     'dleft': 0xCB + 1024, #arrowleft
+#     'ddown': 0xD0 + 1024, #arrowdown
+#     'dright': 0xCD + 1024, #arrowright
+#     'rup': 0x17, # i
+#     'rleft': 0x24, # j
+#     'rdown': 0x25, # k
+#     'rright': 0x26, # l
+#     'r3': 0x18, # o
+#     'l1': 0x2C, # z
+#     'l2': 0x2D, # x
+#     'r1': 0x23, # h
+#     'r2': 0x16, # u
+#     'sq': 0x12, # e
+#     'square': 0x12, # e
+#     'tri': 0x2E, # c
+#     'triangle': 0x2E, # c
+#     'o': 0x2F, # v
+#     'circle': 0x2F, # v
+#     'x': 0x30, # b
+#     'start': 0x31, # n
+#     'select': 0x22 # g
+# }
 
-dsr_keymap = {
+ds1_keymap = {
     'up': 0x11, # w
     'left': 0x1E, # a
     'down': 0x1F, # s
@@ -130,10 +130,10 @@ if __name__ == '__main__':
 
     print("Listening...")
     while True:
-        resp = sock.recv(2048).decode('utf-8')
+        resp = sock.recv(512).decode('utf-8') # chat single message limit is 500
         if len(resp) > 0:
             # Reply to a PING with a PONG to ensure we don't time out
-            print("NEW MESSAGE: " + resp)
+            # print("NEW MESSAGE: " + resp)
             if resp.startswith('PING'):
                 sock.send("PONG\n".encode('utf-8'))
             else:
@@ -141,13 +141,17 @@ if __name__ == '__main__':
                 if key == 'STOP' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
                     print("-----------------ADMIN STOP---------------")
                     sys.exit()
-                if key == 'PAUSE' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                elif key == 'PAUSE' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
                     print("-----------------ADMIN PAUSE---------------")
                     ACTIVE = False
-                if key == 'START' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                elif key == 'START' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                    print("-----------------ADMIN START---------------")
                     ACTIVE = True
-                print(key)
-                if ACTIVE: press(key)
-                elif ACTIVE == False: print("CHAT COMMANDS CURRENTLY PAUSED")
+                else:
+                    
+                    if ACTIVE: 
+                        print('ATTEMPTING TO PRESS ' + key)
+                        press(key)
+                    else: print("CHAT COMMANDS CURRENTLY PAUSED")
 
 # NEW MESSAGE: :lokoheimer!lokoheimer@lokoheimer.tmi.twitch.tv PRIVMSG #mohomie :cleft

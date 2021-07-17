@@ -64,7 +64,8 @@ Note: These are from my observations, probably will need a live test to determin
     - Possible fix might be to enable slow mode of 3 seconds.
 
 ## TODO
-[ ] Add DS Remastered control support
+[X] Add DS Remastered control support
+
 [X] Perform stress testing by simulating a rowdy twitch chat and seeing how program holds up
     - Can handle random commands generated every 1/100th of a second
     - Does not execute all commands due to character being locked in animations
@@ -78,7 +79,7 @@ Note: These are from my observations, probably will need a live test to determin
 [X] Modify controls to use letter keys only
     - Already implemented
 
-[ ] Perform long term test
+[X] Perform long term test
 
 [ ] Detect when DS closes to trigger auto shutdown
 
