@@ -133,7 +133,7 @@ if __name__ == '__main__':
         resp = sock.recv(512).decode('utf-8') # chat single message limit is 500
         if len(resp) > 0:
             # Reply to a PING with a PONG to ensure we don't time out
-            # print("NEW MESSAGE: " + resp)
+            print("NEW MESSAGE: " + resp)
             if resp.startswith('PING'):
                 sock.send("PONG\n".encode('utf-8'))
             else:
