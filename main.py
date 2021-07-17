@@ -85,7 +85,7 @@ dodgeSet = {'dodge', 'dodgeleft', 'dodgeright', 'dodgeback'}
 
 def dodge(key):
     delay = 0.2
-    if key == 'dodge':
+    if key == '':
         keyboard.PressKey(ds1_keymap['forward'])
         keyboard.PressKey(ds1_keymap['circle'])
         time.sleep(delay)
@@ -108,13 +108,12 @@ def press(key):
         if key[:5] == 'dodge':
             dir = key[5:] # extract dodge direction
             dodge(dir)
-    else:
-        direct = ds1_keymap.setdefault(key,'')
-        print(direct)
-        if direct != '':
-            keyboard.PressKey(direct)
-            time.sleep(delay)
-            keyboard.ReleaseKey(direct)
+    direct = ds1_keymap.setdefault(key,'')
+    print(direct)
+    if direct != '':
+        keyboard.PressKey(direct)
+        time.sleep(delay)
+        keyboard.ReleaseKey(direct)
 
 # Function to detect clicks specifically. Not used currently but can be used for other games that require mouse input
 def leftClick():
@@ -155,7 +154,7 @@ if __name__ == '__main__':
                 sock.send("PONG\n".encode('utf-8'))
             else:
                 key = resp.split()[-1][1:]
-                if key == 'STOP' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                if key == 'EXIT' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
                     print("-----------------ADMIN STOP---------------")
                     sys.exit()
                 elif key == 'PAUSE' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):

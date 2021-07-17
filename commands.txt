@@ -1,6 +1,5 @@
 HOW TO PLAY TWITCH PLAYS SOULS (made by mohomie):
 - Type ONE command from the left column in the list below without '' to press in-game
-- DO NOT SPAM THE SAME COMMAND REPEATEDLY, I DO NOT WANT YOU TO GET SHADOWBANNED
 - Note: controls for playstation, sorry skaguy, yuiffie, and whoever else on xbox lmao
 
 'COMMAND'            | IN-GAME ACTION
@@ -21,48 +20,42 @@ HOW TO PLAY TWITCH PLAYS SOULS (made by mohomie):
 
                     ## DODGING ##
 ----------------------------------------------------------------
-'dodge' / 'roll'               | roll forward
-'dodgeback' / 'rollback'           | roll back
-'dodgeleft' / 'rollleft'           | roll moving left
-'dodgeright' / 'rollright        | dodge moving left stick right
+'dodge'               | roll forward
+'dodgeback'           | roll back
+'dodgeleft'           | roll moving left
+'dodgeright'          | dodge moving left stick right
 
         ## FACE BUTTONS ## ('/' = alternative input)
 ----------------------------------------------------------------
-'square' / 'sq'      | use item
-'triangle' / 'tri'   | toggle two-hand or one-hand for weapon
-'circle' / 'o'       | backstep or back out of menu
-'enter' / 'x'        | interact or confirm menu choice
+'square' / 'sq'       | use item
+'triangle' / 'tri'    | toggle two-hand or one-hand for weapon
+'circle' / 'o'        | backstep or back out of menu
+'enter' / 'x'         | interact or confirm menu choice
 (note: x = playstation 'x' button)
 
                 ## DPAD MOVEMENT ##
 ----------------------------------------------------------------
-'dup'                | change magic or move up in menu
-'ddown'              | change item or move down in menu
-'dleft'              | change left hand or move left in menu
-'dright'             | change right hand or move right in menu
+'dup'                 | change magic or move up in menu
+'ddown'               | change item or move down in menu
+'dleft'               | change left hand or move left in menu
+'dright'              | change right hand or move right in menu
 
                 ## DPAD MOVEMENT ##
 ----------------------------------------------------------------
-'menuup' / 'mup'               | change magic or move up in menu
-'menudown' / 'mdown'             | change item or move down in menu
-'menuleft' / 'mleft'             | change left hand or move left in menu
-'menuright' / 'mright'            | change right hand or move right in menu
+'menuup' / 'mup'       | change magic or move up in menu
+'menudown' / 'mdown'   | change item or move down in menu
+'menuleft' / 'mleft'   | change left hand or move left in menu
+'menuright' / 'mright' | change right hand or move right in menu
 
                 ## CAMERA MOVEMENT ##
 ----------------------------------------------------------------
-'camup' / 'cup'               | move camera up
-'camdown' / 'cdown'              | move camera down
-'camleft' / 'cleft'             | move camera left
-'camright' / 'cright'            | move camera right
+'camup' / 'cup'         | move camera up
+'camdown' / 'cdown'     | move camera down
+'camleft' / 'cleft'     | move camera left
+'camright' / 'cright'   | move camera right
 
                 ## OTHER BUTTONS ##
 ----------------------------------------------------------------
-'l3'                 | we ain't coordinated enough to jump lmao
-'r3'                 | lock onto enemy or reset camera
-'start'              | open pause menu
-'select'             | open gesture menu
-
-
-
-
-for business inquiries contact me at 69ligma420ligma@gmail.com
+'R3' / 'R3'            | lock onto enemy or reset camera
+'start'                | open pause menu
+'select'               | open gesture menu
