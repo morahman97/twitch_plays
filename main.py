@@ -9,18 +9,18 @@ import win32con
 
 # Full list of character mappings can be found at https://raw.githubusercontent.com/SerpentAI/SerpentAI/dev/serpent/input_controllers/native_win32_input_controller.py
 # ds1_keymap = {
-#     'up': 0x11, # w
+#     'forward': 0x11, # w
 #     'left': 0x1E, # a
-#     'down': 0x1F, # s
+#     'back': 0x1F, # s
 #     'right': 0x20, # d
 #     'dup': 0xC8 + 1024, #arrowup
 #     'dleft': 0xCB + 1024, #arrowleft
 #     'ddown': 0xD0 + 1024, #arrowdown
 #     'dright': 0xCD + 1024, #arrowright
-#     'rup': 0x17, # i
-#     'rleft': 0x24, # j
-#     'rdown': 0x25, # k
-#     'rright': 0x26, # l
+#     'cup': 0x17, # i
+#     'cleft': 0x24, # j
+#     'cdown': 0x25, # k
+#     'cright': 0x26, # l
 #     'r3': 0x18, # o
 #     'l1': 0x2C, # z
 #     'l2': 0x2D, # x
@@ -80,11 +80,17 @@ ds1_keymap = {
 }
 
 ACTIVE = False
+blocking = False # flag used for determining if character holding block or not
+sprinting = False # flag used for determining if character holding sprint or not
 
 dodgeSet = {'dodge', 'dodgeleft', 'dodgeright', 'dodgeback'}
 
 def dodge(key):
-    delay = 0.2
+    global sprinting
+    delay = 0.1
+    if sprinting:
+        keyboard.ReleaseKey(ds1_keymap['o'])
+        time.sleep(delay)
     if key == '':
         keyboard.PressKey(ds1_keymap['forward'])
         keyboard.PressKey(ds1_keymap['circle'])
@@ -97,13 +103,39 @@ def dodge(key):
         time.sleep(delay)
         keyboard.ReleaseKey(ds1_keymap[key])
         keyboard.ReleaseKey(ds1_keymap['circle'])
+    if sprinting:
+        time.sleep(delay)
+        keyboard.PressKey(ds1_keymap['o'])
 
 def press(key):
+    global blocking
+    global sprinting
     key = key.lower()
-    delay = 0.2
+    if key == 'l1' and blocking: return
+    delay = 0.1
     # If input command is to move or block, set a higher duration for action
     if key == 'forward' or key == 'left' or key == 'back' or key == 'right' or key == 'l1':
-        delay = 0.75
+        delay = 0.5
+    elif key == 'toggleblock':
+        if blocking: 
+            keyboard.ReleaseKey(ds1_keymap['l1'])
+            blocking = False
+        else:
+            keyboard.PressKey(ds1_keymap['l1'])
+            blocking = True
+        return
+    elif key == 'togglesprint':
+        if sprinting:
+            keyboard.ReleaseKey(ds1_keymap['o'])
+            sprinting = False
+        else:
+            keyboard.PressKey(ds1_keymap['start'])
+            time.sleep(0.1)
+            keyboard.ReleaseKey(ds1_keymap['start'])
+            time.sleep(0.1)
+            keyboard.PressKey(ds1_keymap['o'])
+            sprinting = True
+        return
     elif key in dodgeSet:
         if key[:5] == 'dodge':
             dir = key[5:] # extract dodge direction
@@ -153,21 +185,23 @@ if __name__ == '__main__':
             if resp.startswith('PING'):
                 sock.send("PONG\n".encode('utf-8'))
             else:
-                key = resp.split()[-1][1:]
-                if key == 'EXIT' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
-                    print("-----------------ADMIN STOP---------------")
-                    sys.exit()
-                elif key == 'PAUSE' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
-                    print("-----------------ADMIN PAUSE---------------")
-                    ACTIVE = False
-                elif key == 'START' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
-                    print("-----------------ADMIN START---------------")
-                    ACTIVE = True
-                else:
-                    
-                    if ACTIVE: 
-                        print('ATTEMPTING TO PRESS ' + key)
-                        press(key)
-                    else: print("CHAT COMMANDS CURRENTLY PAUSED")
+                key = resp.split()[-1]
+                if key[0] == ':': 
+                    key = key[1:]
+                    if key == 'EXIT' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                        print("-----------------ADMIN STOP---------------")
+                        sys.exit()
+                    elif key == 'PAUSE' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                        print("-----------------ADMIN PAUSE---------------")
+                        ACTIVE = False
+                    elif key == 'START' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                        print("-----------------ADMIN START---------------")
+                        ACTIVE = True
+                    else:
+                        
+                        if ACTIVE: 
+                            print('ATTEMPTING TO PRESS ' + key)
+                            press(key)
+                        else: print("CHAT COMMANDS CURRENTLY PAUSED")
 
 # NEW MESSAGE: :lokoheimer!lokoheimer@lokoheimer.tmi.twitch.tv PRIVMSG #mohomie :cleft
