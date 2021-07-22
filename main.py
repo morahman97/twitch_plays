@@ -197,6 +197,12 @@ if __name__ == '__main__':
                     elif key == 'START' and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
                         print("-----------------ADMIN START---------------")
                         ACTIVE = True
+                    # Hardcode pressing the 'Enter' key
+                    elif key.startswith('ENTER') and (resp.startswith(':napstarf!') or resp.startswith(':mohomie!')):
+                        print("-----------------ADMIN ENTER---------------")
+                        keyboard.PressKey('0x1C')
+                        time.sleep(0.1)
+                        keyboard.ReleaseKey('0x1C')
                     else:
                         
                         if ACTIVE: 
