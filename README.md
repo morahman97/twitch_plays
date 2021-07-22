@@ -1,5 +1,7 @@
 # twitch_plays_souls
 
+To see a live demo, click [here](https://clips.twitch.tv/CleanBrightCoffeePRChase-UJt_OTK-Dl8fXmv3).
+
 ## Important Notes
 Disclaimer 1: **Please be aware that other people will be simulating keyboard presses to your computer. 
 While I will do my part to ensure that no harmful scenarios arise,
